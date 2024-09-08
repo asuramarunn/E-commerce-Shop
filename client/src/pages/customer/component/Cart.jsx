@@ -10,7 +10,7 @@ import { BasicButton, LightPurpleButton } from '../../../utils/buttonStyles';
 import { useNavigate } from 'react-router-dom';
 import { updateCustomer } from '../../../redux/userHandle';
 
-const Cart = ({ setIsCartOpen }) => {
+const  Cart = ({ setIsCartOpen }) => {
 
     const dispatch = useDispatch();
 
@@ -104,19 +104,19 @@ const Cart = ({ setIsCartOpen }) => {
                                         {data.productName}
                                     </Typography>
                                     <Typography variant="subtitle2">
-                                        Original Price: ₹{data.price.vnd}
+                                        Original Price: {data.price.vnd} đ
                                     </Typography>
                                     <Typography variant="subtitle2">
                                         Discount: {data.price.discountPercent}% Off
                                     </Typography>
                                     <Typography variant="subtitle2">
-                                        Final Price: ₹{data.price.cost}
+                                        Final Price: {data.price.cost} đ
                                     </Typography>
                                     <Typography variant="subtitle2">
                                         Quantity: {data.quantity}
                                     </Typography>
                                     <Typography variant="subtitle2">
-                                        Total: ₹{data.quantity * data.price.cost}
+                                        Total: {data.quantity * data.price.cost} đ
                                     </Typography>
                                     <ButtonContainer>
                                         <Button
@@ -160,11 +160,11 @@ const Cart = ({ setIsCartOpen }) => {
                         </Title>
                         <Divider sx={{ my: 1 }} />
                         <DetailsContainer>
-                            Price ({totalQuantity} items) = ₹{totalOGPrice}
+                            Price ({totalQuantity} items) = {totalOGPrice} đ
                             <br /><br />
-                            Discount = ₹{totalOGPrice - totalNewPrice}
+                            Discount = {totalOGPrice - totalNewPrice} đ
                             <Divider sx={{ my: 1 }} />
-                            Total Amount = ₹{totalNewPrice}
+                            Total Amount = {totalNewPrice} đ
                         </DetailsContainer>
                         <Divider sx={{ my: 1, mb: 4 }} />
                         {cartDetails.length > 0 && (

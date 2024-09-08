@@ -91,7 +91,7 @@ const userSlice = createSlice({
             if (existingProduct) {
                 existingProduct.quantity += 1;
             } else {
-                const newCartItem = { ...action.payload };
+                const newCartItem = { ...action.payload, quantity: 1 };
                 state.currentUser.cartDetails.push(newCartItem);
             }
 

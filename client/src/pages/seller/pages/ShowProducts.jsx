@@ -120,8 +120,8 @@ const ShowProducts = () => {
                         <ProductContainer>
                           <ProductImage src={data.productImage} />
                           <ProductName>{data.productName}</ProductName>
-                          <PriceVND>{data.price.vnd}</PriceVND>
-                          <PriceCost>₹{data.price.cost}</PriceCost>
+                          <PriceVND>{data.price.vnd} đ </PriceVND>
+                          <PriceCost>{data.price.cost} đ </PriceCost>
                           <PriceDiscount>
                             {data.price.discountPercent}% off
                           </PriceDiscount>

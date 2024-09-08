@@ -56,8 +56,8 @@ const ViewProduct = () => {
                                     <ProductInfo>
                                         <ProductName>{productDetails && productDetails.productName}</ProductName>
                                         <PriceContainer>
-                                            <PriceCost>₹{productDetails && productDetails.price && productDetails.price.cost}</PriceCost>
-                                            <PriceVND>₹{productDetails && productDetails.price && productDetails.price.vnd}</PriceVND>
+                                            <PriceCost>{productDetails && productDetails.price && productDetails.price.cost} đ</PriceCost>
+                                            <PriceVND>{productDetails && productDetails.price && productDetails.price.vnd} đ</PriceVND>
                                             <PriceDiscount>{productDetails && productDetails.price && productDetails.price.discountPercent}% off</PriceDiscount>
                                         </PriceContainer>
                                         <Description>{productDetails && productDetails.description}</Description>

@@ -23,6 +23,11 @@ mongoose
 
 app.use('/', Routes);
 
+app.use("/api/config/paypal", (req, res) => {
+    res.send(process.env.PAYPAL_CLIENT_ID);
+  });
+  
+
 app.listen(PORT, () => {
     console.log(`Server started at port no. ${PORT}`)
 })

@@ -307,6 +307,27 @@ const getAddedToCartProducts = async (req, res) => {
     }
 };
 
+const updateStock = async (req, res) => {
+    try {
+        const { orderedProducts } = req.body;
+
+        // Lặp qua từng sản phẩm đã được đặt hàng
+        for (const item of orderedProducts) {
+            const product = await Product.findById(item._id);
+            if (product) {
+                // Cập nhật số lượng hàng tồn kho
+                product.quantity -= item.quantity;
+                await product.save();
+            }
+        }
+
+        res.status(200).json({ message: 'Stock updated successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating stock', error });
+    }
+};
+
+// Xuất các hàm ra để dùng trong file routes
 module.exports = {
     productCreate,
     getProducts,
@@ -323,4 +344,5 @@ module.exports = {
     deleteAllProductReviews,
     getInterestedCustomers,
     getAddedToCartProducts,
+    updateStock,  
 };

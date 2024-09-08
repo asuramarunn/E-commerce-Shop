@@ -60,8 +60,8 @@ const Products = ({ productData }) => {
             <ProductContainer>
               <ProductImage src={data.productImage} />
               <ProductName>{data.productName}</ProductName>
-              <PriceMrp>{data.price.mrp}</PriceMrp>
-              <PriceCost>₹{data.price.cost}</PriceCost>
+              <PriceVND>{data.price.vnd}</PriceVND>
+              <PriceCost>{data.price.cost} đ</PriceCost>
               <PriceDiscount>{data.price.discountPercent}% off</PriceDiscount>
               <AddToCart>
                 {currentRole === "Customer" &&
@@ -137,7 +137,7 @@ const ProductName = styled.p`
   text-align: center;
 `;
 
-const PriceMrp = styled.p`
+const PriceVND = styled.p`
   margin-top: 8px;
   text-align: center;
   text-decoration: line-through;
